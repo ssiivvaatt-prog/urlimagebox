@@ -1,0 +1,79 @@
+name: urlimagebox
+description: URL-based image collection manager for trading cards
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+dependencies:
+  sqflite_common_ffi: ^2.4.0+2
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  # Auth 
+  google_sign_in: ^6.1.5
+  googleapis_auth: ^2.0.0
+  url_launcher: ^6.3.2
+
+  # Google Mobile Ads
+  google_mobile_ads: ^7.0.0
+  
+  # State Management
+  flutter_riverpod: ^3.0.3
+  flutter_hooks: ^0.21.3+1
+  hooks_riverpod: ^3.0.3
+  
+  # Database
+  sqflite: ^2.4.1
+  shared_preferences: ^2.5.3
+  
+  # File System
+  path_provider: ^2.1.4
+  android_intent_plus: ^6.0.0
+  path: ^1.9.0
+  saver_gallery: ^4.1.0
+  # Network
+  googleapis: ^15.0.0
+  http: ^1.2.2
+  
+  # Image Processing
+  image: ^4.7.2
+  exif: ^3.3.0
+  file_picker: ^10.3.8
+  # UI
+  flutter_colorpicker: ^1.1.0
+  
+  # Share
+  share_plus: ^12.0.1
+
+  # Utilities
+  uuid: ^4.5.1
+  crypto: ^3.0.7
+  collection: ^1.19.1
+
+  super_clipboard: ^0.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21 
+  adaptive_icon_foreground: "assets/icon/icon.png"
+  adaptive_icon_background: "#00000000"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icon/icon.png
