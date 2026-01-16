@@ -78,9 +78,7 @@ class SeriesEditUi extends HookConsumerWidget {
     //     useTextEditingController(text: initialConfig?['baseUrlBefore'] ?? "");
     final beforeController = useTextEditingController(
         text: initialConfig?['baseUrlBefore'] ??
-            // "https://bandainamco-am.co.jp/am/vg/idolmaster-tours/images/cardlist/cards/");
-            // "https://cardfolio.idolmaster-official.jp/images/cardlist/img_wld_01_");
-            "https://raw.githubusercontent.com/ssiivvaatt-prog/urlimagebox-samples/refs/heads/main/images/default");
+            "https://raw.githubusercontent.com/ssiivvaatt-prog/urlimagebox/refs/heads/main/sample_images/default");
 
     // final afterController =
     // useTextEditingController(text: initialConfig?['baseUrlAfter'] ?? "");
