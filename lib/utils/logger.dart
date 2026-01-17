@@ -7,7 +7,7 @@
 // CardApp Logging （既存 appLog を拡張）
 // enabled を true/false にするだけで一括ログ制御
 // ----------------------------------------------------
-bool appLogEnabled = true; // ← ここだけホットリロードで変更する
+bool appLogEnabled = false; // ← ここだけホットリロードで変更する
 
 void appLog(String message) {
   if (!appLogEnabled) return;
