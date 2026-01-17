@@ -1,5 +1,4 @@
-# URL Image Box  
-*English version follows after Japanese.*
+# URL Image Box
 
 ---
 
@@ -19,7 +18,73 @@ https://card004.png
 https://card315.png
 ```
 
-## 主な機能
+---
+大まかな機能＋操作説明。
+まず、右下の「新規作成」でHPを読み込む設定を作ります。
+
+![シリーズ編集画面](https://raw.githubusercontent.com/ssiivvaatt-prog/urlimagebox/refs/heads/main/sample_images/explain001.png)
+
+# シリーズ編集画面の説明
+
+![シリーズ編集画面](https://raw.githubusercontent.com/ssiivvaatt-prog/urlimagebox/refs/heads/main/sample_images/explain002.png)
+
+## シリーズ編集画面とは？
+
+この画面では、連番画像の URL パターンを登録できます。  
+例：`https://sample/card001.png` ～ `https://sample/card315.png`
+
+---
+
+## 各項目の説明（日本語）
+
+### ■ シリーズ名（Series Name）
+この連番画像セットにつける名前です。  
+一覧表示・フィルタリング・全体表示などで識別するために使います。
+
+例：  
+- デフォルト表示  
+- カードAシリーズ  
+- イベント画像セット  
+
+---
+
+### ■ 元のURLをどう分解したか？
+URL は「前半」「番号」「後半」に分けて扱います。
+
+例：`https://sample/card001.png`  
+- 前半：`https://sample/card`  
+- 番号：`001`  
+- 後半：`.png`  
+
+この3つを組み合わせて連番URLを自動生成します。
+
+---
+
+### ■ 桁数（Digit Count）
+番号部分が何桁で構成されているかを指定します。
+
+例：  
+- `001` → 3桁  
+- `00045` → 5桁  
+
+---
+
+### ■ ゼロ埋め（Zero Padding）
+番号を指定した桁数に合わせて、足りない部分を `0` で埋める機能です。
+
+- ON → `001`, `002`, `010`  
+- OFF → `1`, `2`, `10`
+
+---
+
+### ■ 表示カラム（Columns）
+画像一覧を何列で並べるかを決めます。
+
+- 3 → 横に3枚  
+- 5 → 横に5枚
+---
+
+# 主な機能
 
 ### ● 画像の取得と管理
 - 指定した URL パターンから画像を取得  
@@ -81,74 +146,79 @@ https://github.com/ssiivvaatt-prog/urlimagebox/issues
 
 ---
 
-# English Version
+# 利用規約
 
-URL Image Box is an application designed to create trading images based on pictures hosted on websites.  
-It works only with sites where images follow a **sequential URL pattern such as 001–999.png**.
-
-Example:
-
-```
-https://card001.png
-https://card002.png
-https://card003.png
-https://card004.png
-…
-https://card315.png
-```
-
-## Features
-
-### ● Image Fetching & Management
-- Fetch images from a specified URL pattern  
-- Images are cached in a reduced size inside the app  
-- You can overlay text such as “Want”, “Offer”, “Owned: 1”, “Date”, etc.  
-- Designed for showing these images to others when trading
-
-### ● Sorting & Filtering
-- Sort and filter images based on the overlaid text  
-- Register multiple URL patterns  
-- “All View” mode allows browsing across all registered patterns  
-- Filter to show only the items you want to display
-
-### ● Image Sharing
-- Export and share the edited image as a single picture
-
-### ● Backup Function
-- Backs up all data **except image cache** to Google Drive  
-- Backup from Android can be restored on Windows, and vice versa  
-- Backup always overwrites with the latest data  
-- After restoring, image cache is rebuilt on each device
-
-### ● Advertisements
-- Ads appear **only during backup operations on Android**  
-- No ads during normal use
+このアプリ「URL Image Box」は、ユーザーが編集した画像の設定情報を Google Drive に保存する機能を提供します。
 
 ---
 
-## Download
+## 利用条件
 
-Download the Windows version here:
-
-[URL Image Box for Windows v1.0.0](https://github.com/ssiivvaatt-prog/urlimagebox/releases/download/v1.0.0/urlimagebox_windows_v1.0.zip)
-
----
-
-## Support / Issues
-
-Bug reports, questions, and feature requests are accepted via GitHub Issues:
-
-https://github.com/ssiivvaatt-prog/urlimagebox/issues
-
-### Notes
-
-- I will try to respond to all questions and requests, but **I may not be able to address everything**  
-- This is my **first app release**, developed **solo**, and includes **AI-generated code**, so responses may be limited  
-- Your feedback will still be valuable for future improvements
+- 本アプリは個人・商用を問わず利用できます  
+- ユーザーは本アプリを自己責任で利用するものとします  
 
 ---
 
-## Contact
+## 免責事項
+
+- 本アプリの使用によって生じた損害（データ消失、誤動作、第三者とのトラブルなど）について、開発者は一切の責任を負いません  
+- Google Drive の障害、API 仕様変更、サービス停止などによる影響についても責任を負いません  
+
+---
+
+## 著作権
+
+- 本アプリのコードおよびデザインは開発者に帰属します  
+
+---
+
+## お問い合わせ
 
 **ssiivvaatt@gmail.com**
 
+---
+
+# プライバシーポリシー
+
+このアプリ「URL Image Box」は、ユーザーが編集した画像の設定情報（フィルター、トリミング、回転など）を Google Drive にバックアップする機能を提供します。画像そのものは保存されません。
+
+---
+
+## 取得する情報
+
+- ユーザーが編集した画像の設定情報（メタデータ）  
+- Google アカウントの認証情報（OAuth による認可）
+
+---
+
+## 利用目的
+
+- 編集情報のバックアップ保存  
+- ユーザーが選択したファイルのみにアクセスし、他のファイルにはアクセスしません
+
+---
+
+## 第三者提供
+
+- 取得した情報は第三者に提供しません  
+- 広告表示のために AdMob を使用しますが、個人情報は収集しません
+
+---
+
+## 保存方法
+
+- Google Drive に保存され、ユーザー自身が管理できます  
+- アプリはユーザーの明示的な操作によってのみ Drive にアクセスします
+
+---
+
+## データの削除
+
+- ユーザーは Drive 上の保存データをいつでも削除できます  
+- アプリ側では自動削除や第三者削除は行いません
+
+---
+
+## お問い合わせ
+
+**ssiivvaatt@gmail.com**
