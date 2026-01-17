@@ -18,5 +18,5 @@
 
 ## お問い合わせ
 
-**nobuyuki.dev@example.com**
+**ssiivvaatt@gmail.com**
 
