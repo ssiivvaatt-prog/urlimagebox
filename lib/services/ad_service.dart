@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../utils/logger.dart';
+import '../secrets.dart';
 
 class AdService {
   static final AdService _instance = AdService._internal();
@@ -39,8 +40,8 @@ class AdService {
     }
 
     final String adUnitId = Platform.isAndroid
-        ? 'ca-app-pub-3940256099942544/1033173712'
-        : 'ca-app-pub-3940256099942544/4411468910';
+        ? AdMobIds.androidInterstitial
+        : AdMobIds.iosInterstitial;
 
     await InterstitialAd.load(
       adUnitId: adUnitId,
