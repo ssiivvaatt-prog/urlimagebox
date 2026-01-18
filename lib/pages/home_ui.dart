@@ -167,12 +167,20 @@ class HomeUi extends HookConsumerWidget {
                 if (!context.mounted) return;
 
                 // 確認ダイアログ
+                // final confirm = await showConfirmDialog(
+                //   context,
+                //   title: 'バックアップ確認\nBackup Confirmation',
+                //   message: '広告が表示された後、バックアップを実行します。\n'
+                //       'よろしいですか?\n\n'
+                //       'An ad will be shown before backup.\n'
+                //       'Do you want to continue?',
+                // );
                 final confirm = await showConfirmDialog(
                   context,
                   title: 'バックアップ確認\nBackup Confirmation',
-                  message: '広告が表示された後、バックアップを実行します。\n'
+                  message: 'バックアップを実行します。既存のバックアップは最新データで上書きされます。\n'
                       'よろしいですか?\n\n'
-                      'An ad will be shown before backup.\n'
+                      'The backup process will begin and any existing backup will be overwritten with the latest data.\n'
                       'Do you want to continue?',
                 );
 

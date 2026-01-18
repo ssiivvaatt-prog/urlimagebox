@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'pages/home_ui.dart';
 import 'DB/CORE/local_db_service.dart';
 import 'DB/models/schema_manager.dart';
@@ -8,27 +10,34 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'DB/DAO/urlblocklist_dao.dart';
 import 'utils/app_lock.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:sqflite/sqflite.dart';
+// import 'package:sqflite/sqflite.dart';
 import 'DB/DAO/preset_dao.dart';
 import '../providers/sharedpreferences_provider.dart';
-import 'services/ad_service.dart';
-import 'package:flutter/foundation.dart';
+// import 'services/ad_service.dart';
+// import 'package:flutter/foundation.dart';
+// import 'dart:io';
+// 🟦 デスクトップ用 SQLite 初期化に必要
 import 'dart:io';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // 🟥 GoogleSignIn 初期化は削除（backup_ui.dart でのみ行う）
-  appLog('ℹ️ GoogleSignIn 初期化は backup_ui.dart に移動済み');
+  // appLog('ℹ️ GoogleSignIn 初期化は backup_ui.dart に移動済み');
 
   // 🟥 広告は Android / iOS のみ
-  if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
-    await AdService.initialize();
-    appLog('✅ AdService 初期化完了');
-  } else {
-    appLog('ℹ️ このプラットフォームでは AdService をスキップ');
+  // if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+  //   await AdService.initialize();
+  //   appLog('✅ AdService 初期化完了');
+  // } else {
+  //   appLog('ℹ️ このプラットフォームでは AdService をスキップ');
+  // }
+// 🟦 デスクトップ（Windows / macOS / Linux）用 SQLite 初期化
+  if (!kIsWeb && (Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+    appLog('🟦 sqflite_common_ffi 初期化完了（デスクトップ）');
   }
-
   runApp(const ProviderScope(child: CardCollectionApp()));
 }
 
@@ -104,16 +113,16 @@ class _AppInitializerState extends State<AppInitializer> {
       appLog('❌ Preset初期化失敗: $e\n$st');
     }
 
-    if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
-      try {
-        await AdService().loadInterstitialAd();
-        appLog('✅ インタースティシャル広告読み込み開始');
-      } catch (e) {
-        appLog('❌ 広告読み込み失敗: $e');
-      }
-    } else {
-      appLog('ℹ️ このプラットフォームでは広告読み込みをスキップ');
-    }
+    // if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+    //   try {
+    //     await AdService().loadInterstitialAd();
+    //     appLog('✅ インタースティシャル広告読み込み開始');
+    //   } catch (e) {
+    //     appLog('❌ 広告読み込み失敗: $e');
+    //   }
+    // } else {
+    //   appLog('ℹ️ このプラットフォームでは広告読み込みをスキップ');
+    // }
 
     appLog("起動処理完了");
   }

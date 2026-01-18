@@ -15,11 +15,11 @@ class LocalDBService {
     if (_db != null) return _db!;
 
     // 🟦 Windows の場合は FFI 版 SQLite を使う
-    if (Platform.isWindows) {
-      sqfliteFfiInit();
-      databaseFactory = databaseFactoryFfi;
-      appLog('🖥️ Windows: sqflite_common_ffi を使用');
-    }
+    // if (Platform.isWindows) {
+    //   sqfliteFfiInit();
+    //   databaseFactory = databaseFactoryFfi;
+    //   appLog('🖥️ Windows: sqflite_common_ffi を使用');
+    // }
 
     final dbPath = await getDatabasesPath();
 

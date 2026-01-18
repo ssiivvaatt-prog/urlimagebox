@@ -10,7 +10,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:googleapis/drive/v3.dart' as drive;
 import 'package:http/http.dart' as http;
 
-import '../services/ad_service.dart';
+// import '../services/ad_service.dart';
 import '../DB/DAO/series_list_dao.dart';
 import '../DB/DAO/cards_dao.dart';
 import '../DB/DAO/preset_dao.dart';
@@ -164,9 +164,12 @@ class BackupProvider extends ChangeNotifier {
         return false;
       }
 
-      await AdService().showAdAndExecute(() async {
-        await _uploadToDrive();
-      });
+      // await AdService().showAdAndExecute(() async {
+      //   await _uploadToDrive();
+      // });
+
+      // 🟦 代わりに直接実行
+      await _uploadToDrive();
 
       appLog('[Backup] ✅ バックアップ完了');
       return true;
